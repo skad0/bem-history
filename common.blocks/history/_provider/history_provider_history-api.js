@@ -35,7 +35,7 @@ provide(inherit(Base, /** @lends history.prototype */{
         // after location silent=true flag usage
         delete this.state.silent;
 
-        this.emit('statechange', { state : state, nativeApi : true });
+        this._emit('statechange', { state : state, nativeApi : true });
     },
 
     _bindEvents : function() {
@@ -84,7 +84,7 @@ provide(inherit(Base, /** @lends history.prototype */{
         window.history[method + 'State'](state, state.title || document.title, state.url);
         this.state = state;
 
-        return this.emit('statechange', { state : state, nativeApi : true });
+        return this._emit('statechange', { state : state, nativeApi : true });
     }
 
 }));

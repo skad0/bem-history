@@ -24,7 +24,7 @@ provide(inherit(Base, /** @lends history.prototype */{
     _onHashChange : function() {
         this.state = this._normalizeState(undefined, document.title, this._removeHashbang(window.location.href));
 
-        this.emit('statechange', { state : this.state, nativeApi : false });
+        this._emit('statechange', { state : this.state, nativeApi : false });
     },
 
     _bindEvents : function() {

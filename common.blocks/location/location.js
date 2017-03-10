@@ -38,7 +38,7 @@ var BEMLocation = inherit(events.Emitter, /** @lends BEMLocation.prototype */{
         if(this._state.referer === Querystring.Uri.normalize(window.location.href)) return;
 
         if(this._state.silent !== true) {
-            this.emit('change', this._state);
+            this._emit('change', this._state);
         }
     },
 
